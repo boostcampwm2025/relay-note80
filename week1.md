@@ -67,4 +67,5 @@
 ## 퀘스트 수행 과정
 
 ### **퀘스트 1. “우리 팀을 표현하는 이미지 AI 통해 생성하기”**
+사용 프롬프트: 순서대로 차은우, 카리나, 박보검 그리고 배경사진이야. 배경사진 안에서 저 3명이 즐겁게 대화하는 모습을 그려줘
 ![차은우카리나박보검](https://raw.githubusercontent.com/kimstitute/imageRepo/refs/heads/main/day4/ChatGPT%20Image%202025%EB%85%84%207%EC%9B%94%2018%EC%9D%BC%20%EC%98%A4%ED%9B%84%2005_05_46.png)
