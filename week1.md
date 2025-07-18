@@ -67,4 +67,4 @@
 ## 퀘스트 수행 과정
 
 ### **퀘스트 1. “우리 팀을 표현하는 이미지 AI 통해 생성하기”**
-![차은우카리나박보검]([https://files.slack.com/files-pri/T095HM2JESV-F096E7QBCQJ/image.png](https://raw.githubusercontent.com/kimstitute/imageRepo/refs/heads/main/day4/ChatGPT%20Image%202025%EB%85%84%207%EC%9B%94%2018%EC%9D%BC%20%EC%98%A4%ED%9B%84%2005_05_46.png))
+![차은우카리나박보검]([https://files.slack.com/files-pri/T095HM2JESV-F096E7QBCQJ/image.png](https://raw.githubusercontent.com/kimstitute/imageRepo/refs/heads/main/day4/ChatGPT%20Image%202025%EB%85%84%207%EC%9B%94%2018%EC%9D%BC%20%EC%98%A4%ED%9B%84%2005_05_46.png)
