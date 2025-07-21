@@ -80,4 +80,4 @@
 
 -  Slack 메시지
 
-  [!Slack 메시지](https://i.postimg.cc/25vkd83j/image.png)
+  ![Slack 메시지](https://i.postimg.cc/25vkd83j/image.png)
