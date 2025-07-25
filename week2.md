@@ -240,8 +240,6 @@ describe('Morning Wake-up Routine', () => {
 
 # Quest 4  : 🤾‍♂️ Slack에 질문 던지기기
 
-# J035 - 김모세
-
 ## 배경
 
 슬랙에서 적극적으로 소통하지 못해 아쉬웠던 경험이 있습니다.
