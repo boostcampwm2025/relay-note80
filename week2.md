@@ -159,3 +159,91 @@
 - ChatGPT 등 AI를 활용해 슬랙에 공유할 ‘꿀팁’ 또는 ‘흥미로운 정보’를 생성한다.
 - 슬랙의 **지정된 채널**(예: #잡학다식, #daily-팁 등)에 해당 정보를 **최소 1회 이상 공유**한다.
 - 메시지에는 **AI의 도움을 받았다는 표시**를 남긴다.
+
+---
+
+
+# J204 - 이윤표
+
+## 배경
+
+개발자의 문제 해결력을 실 생활에도 적용할 수 있을까요?  
+
+> A: 여보 마트가서 우유 사고 만약에 아보카도 있으면 6개 사와.
+> B: (우유를 양 손에 가득 들고) 아보카도 있었어.
+
+## 퀘스트 소개
+
+우리가 실 생활에서 겪는 문제를 에러 메시지로 표현해봅시다! 미션을 하거나 실제 생활을 하며 실수한 것들을 아래처럼 표현해 보세요!  
+
+```
+Error: MissingRequiredItemException: Expected 'milk', received 'avocado * 6'
+    at GroceryMission.execute (/home/life/missions/shopping.js:42:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+Note: Conditional logic misinterpreted. Did you mean "if avocado exists then also buy 6"?
+```
+
+아니면 실수하고 싶지 않은 문제에 대해 테스트 코드를 작성해 보아도 좋습니다!  
+
+→ 아침에 알람을 snooze하고 다시 잠들지 않기 위한 Jest 코드  
+
+```js
+// wakeUpRoutine.test.js
+
+const { triggerAlarm, userReactToAlarm } = require('./wakeUpRoutine');
+
+jest.useFakeTimers();
+
+describe('Morning Wake-up Routine', () => {
+  test('User should not fall back asleep after snoozing the alarm', () => {
+    // Step 1: Alarm rings
+    const alarm = triggerAlarm();
+
+    // Step 2: User snoozes
+    const result = userReactToAlarm(alarm, { action: 'snooze' });
+
+    // Simulate time passing (5 minutes of snooze)
+    jest.advanceTimersByTime(5 * 60 * 1000); // 5 minutes
+
+    // Step 3: Check user's consciousness state
+    expect(result.fellBackAsleep).toBe(false);
+    expect(result.actions.includes('gotUp')).toBe(true);
+  });
+
+  test('User completely ignores snooze and wakes up immediately', () => {
+    const alarm = triggerAlarm();
+
+    const result = userReactToAlarm(alarm, { action: 'wakeUpImmediately' });
+
+    expect(result.fellBackAsleep).toBe(false);
+    expect(result.actions).toContain('turnedOffAlarm');
+    expect(result.actions).toContain('gotUp');
+  });
+
+  test('Fails when user falls back asleep', () => {
+    const alarm = triggerAlarm();
+
+    const result = userReactToAlarm(alarm, { action: 'snoozeThenSleep' });
+
+    expect(result.fellBackAsleep).toBe(true);
+    expect(result.actions).not.toContain('gotUp');
+
+    // This is a failing case
+    expect(() => {
+      if (result.fellBackAsleep) {
+        throw new Error('Regression: User fell back asleep after snoozing');
+      }
+    }).toThrow('Regression: User fell back asleep after snoozing');
+  });
+});
+
+```
+
+이외에도 자유로운 방식으로 실 생활의 문제를 LLM과 함께 코드와 에러 메시지로 표현해 보세요!  
+
+## 달성 기준
+
+- 하루를 마치며 기억에 남는 실수나 문제를 생각해 보세요. 미션이나 개발과 직접적인 관련이 없는 것일 수록 좋습니다!
+- 위 예시를 보고 어떻게 프롬프트를 입력하면 더 재미있는 출력을 생성할 수 있을지 고민해보세요.
+- 가장 마음에 드는 결과를 Slack에 공유해보세요!
+
