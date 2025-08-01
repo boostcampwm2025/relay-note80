@@ -5,6 +5,23 @@
 
 ---
 
+<details>
+  <summary>📜 퀘스트 목차</summary>
+  <ol>
+    <li>
+      <a href="#quest-1--ai가-직접-봐주는-오늘의-년도별-운세">Quest 1: ❄ “AI가 직접 봐주는 오늘의 년도별 운세”</a>
+    </li>
+    <li>
+      <a href="#quest-2--ai-꿀팁-밸런스-게임--ver2">Quest 2: 🧠 “AI 꿀팁 밸런스 게임 ” ver2</a>
+    </li>
+    <li><a href="#quest-3--ai에게-개발자-관련-재밌는-글-작성-해달라고-하기">Quest 3: 📝 AI에게 개발자 관련 재밌는 글 작성 해달라고 하기</a></li>
+    <li><a href="#quest-4--ai-면접관과-함께하는-3일-cs-퀴즈-챌린지-develop">Quest 4: 🤖 AI 면접관과 함께하는 3일 CS 퀴즈 챌린지 (develop)</a></li>
+    <li><a href="#quest-5--ai와-1대1-게임으로-학습-테스트하기">Quest 5: 🎮 "AI와 1대1 게임으로 학습 테스트하기"</a></li>
+  </ol>
+</details>
+
+---
+
 # Quest 1: ❄ “AI가 직접 봐주는 오늘의 년도별 운세”
 
 ## 목표
