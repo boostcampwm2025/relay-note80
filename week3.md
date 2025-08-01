@@ -132,91 +132,131 @@
 
 ---
 
-# Quest 3: 🥑 생활 코드 리뷰
+# Quest 3: 📝 AI에게 개발자 관련 재밌는 글 작성 해달라고 하기
 
 ## 배경
 
-개발자의 문제 해결력을 실 생활에도 적용할 수 있을까요?
+토론 시간에 슬랙에서 다양한 유머와 재치 넘치시는 분들을 많이 목격했습니다.
+“야 너두 재미있는 개그 할 수 있어!” 라는 시각에서 접근해봤습니다.
 
-> A: 여보 마트가서 우유 사고 만약에 아보카도 있으면 6개 사와.
-B: (우유를 양 손에 가득 들고) 아보카도 있었어.
-> 
+## 영감을 받은 내용들 조사
+- 개발자용어와 애니를 섞은 부분
+  
+  <img width="389" height="150" alt="스크린샷 2025-08-01 오후 2 35 28" src="https://github.com/user-attachments/assets/e729982c-0049-4e4f-894a-2c432d3e6806" />
+
+- 릴레이 프로젝트로 개발자 감성의 요일 삼행시 진행했던 부분
+
+  <img width="744" height="283" alt="스크린샷 2025-08-01 오후 2 37 32" src="https://github.com/user-attachments/assets/612b5b31-6bf6-4caf-a7dc-f62502cebde5" />
+
+- 개발자의 AI 유머
+
+    <img width="436" height="467" alt="스크린샷 2025-08-01 오후 2 39 22" src="https://github.com/user-attachments/assets/1a41787f-776e-4f18-aca9-59df769c4c2d" />
 
 ## 퀘스트 소개
 
-우리가 실 생활에서 겪는 문제를 에러 메시지로 표현해봅시다! 미션을 하거나 실제 생활을 하며 실수한 것들을 아래처럼 표현해 보세요!
+개발자도 재밌는 사람이라는 걸 뽐내고 표현해봅시다!
+
+### 프롬프트 예시 1)
+
+`스토리 주제 설명(예시, 이번 작성할 스토리는 용사의 성장 일대기야 세계관은 프론트와 백엔드 나라로 나눠져 있고 용사가 악당을 무찌르는 이야기로 작성해줘"`
+
+### 프롬프트 예시 1의 결과)
 
 ```
-Error: MissingRequiredItemException: Expected 'milk', received 'avocado * 6'
-    at GroceryMission.execute (/home/life/missions/shopping.js:42:13)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-Note: Conditional logic misinterpreted. Did you mean "if avocado exists then also buy 6"?
+《시공간 디버거: 코드 제로의 전설》
+서기 3087년.
+세상은 거대한 OS(오더 시스템) 위에서 작동하고 있었다.
+모든 존재는 '코드'로 구성되었고, 인간은 ‘유저’로 불리며, 각자 고유한 UID를 가지고 태어났다.
 
+세계는 프론트월드(Frontworld)와 백엔드리아(Backendria)로 나뉘어 있었고,
+그 사이에는 방화벽 평원(Firewall Plains)이라는 거대한 경계가 펼쳐져 있었다.
+
+제로의 탄생
+‘제로’는 스스로를 디버깅할 수 있는 유일한 존재였다.
+그는 콜 스택 언덕(Call Stack Hill)에서 버려진 유닛이었지만,
+무의식 중에 루트 계정(Root Access)을 각성했다.
+
+그날 밤, 꿈속에서 시스템의 창조주인 ‘깃마스터(Gitmaster)’가 나타나 말했다.
+
+“너는 이 세계의 치명적인 버그를 고칠 유일한 디버거다.
+시스템은 곧 무한 루프에 빠져 붕괴할 것이다.”
+
+퀘스트의 시작
+제로는 전설의 패치노트(Patch Note of Origin)를 찾아 떠났다.
+여정 도중 그는 마법사 async, 전사 thread, 힐러 stackoverflow와 파티를 결성했다.
+
+그들은 다크 캐시 미궁, 루프 호수, 세그먼트 폴트 협곡을 지나며
+끊임없이 로그를 모으고, 트레이스를 따라갔다.
+
+하지만 그들 앞을 막는 자는 다름 아닌...
+
+데몬킹 404
+그는 시스템 최하단 ‘/dev/null’에서 올라온 에러 그 자체였다.
+모든 존재를 NULL로 만들고, 데이터를 잊혀지게 하는 공포의 존재.
+
+그는 외쳤다.
+
+“나는 존재하지 않는 존재. 넌 나를 디버깅할 수 없다.”
+
+제로는 무너지는 세계 속에서 try-catch 마법진을 펼치며 외쳤다.
+
+“널 try 해보지도 않고, throw 하진 않아!”
+
+최후의 커밋
+깃마스터가 남긴 마지막 키워드,
+git commit -m "Fix critical bug: Restore humanity"
+
+제로는 자신의 UID와 로그를 모두 걸고,
+최후의 푸시(push) 를 감행한다.
+
+Push complete.
+System rebooting...
+Welcome, User.
 ```
 
-아니면 실수하고 싶지 않은 문제에 대해 테스트 코드를 작성해 보아도 좋습니다!
-
-→ 아침에 알람을 snooze하고 다시 잠들지 않기 위한 Jest 코드
-
-```jsx
-// wakeUpRoutine.test.js
-
-const { triggerAlarm, userReactToAlarm } = require('./wakeUpRoutine');
-
-jest.useFakeTimers();
-
-describe('Morning Wake-up Routine', () => {
-  test('User should not fall back asleep after snoozing the alarm', () => {
-    // Step 1: Alarm rings
-    const alarm = triggerAlarm();
-
-    // Step 2: User snoozes
-    const result = userReactToAlarm(alarm, { action: 'snooze' });
-
-    // Simulate time passing (5 minutes of snooze)
-    jest.advanceTimersByTime(5 * 60 * 1000); // 5 minutes
-
-    // Step 3: Check user's consciousness state
-    expect(result.fellBackAsleep).toBe(false);
-    expect(result.actions.includes('gotUp')).toBe(true);
-  });
-
-  test('User completely ignores snooze and wakes up immediately', () => {
-    const alarm = triggerAlarm();
-
-    const result = userReactToAlarm(alarm, { action: 'wakeUpImmediately' });
-
-    expect(result.fellBackAsleep).toBe(false);
-    expect(result.actions).toContain('turnedOffAlarm');
-    expect(result.actions).toContain('gotUp');
-  });
-
-  test('Fails when user falls back asleep', () => {
-    const alarm = triggerAlarm();
-
-    const result = userReactToAlarm(alarm, { action: 'snoozeThenSleep' });
-
-    expect(result.fellBackAsleep).toBe(true);
-    expect(result.actions).not.toContain('gotUp');
-
-    // This is a failing case
-    expect(() => {
-      if (result.fellBackAsleep) {
-        throw new Error('Regression: User fell back asleep after snoozing');
-      }
-    }).toThrow('Regression: User fell back asleep after snoozing');
-  });
-});
+### 프롬프트 예시 2)
 
 ```
+개발자가 할수 있는 낭만적인 시를 작성해줘
+개발자 용어를 담아서
+```
 
-이외에도 자유로운 방식으로 실 생활의 문제를 LLM과 함께 코드와 에러 메시지로 표현해 보세요!
+### 프롬프트 예시 2 결과)
+
+```
+깃헙에 푸시한 내 마음,  
+코멘트 한 줄 없이 머지되었다.  
+
+컴파일은 잘 되는데,  
+왜 넌 내 말만 들으면 에러를 뱉니.  
+
+async하게 기다렸지만  
+await 없이 떠나버렸구나.  
+
+커밋했던 기억들,  
+리베이스해도 지워지지 않는다.  
+
+네가 남긴 로그만  
+console에 남았다.  
+
+나는 오늘도 디버깅한다.  
+사랑이라는 미지의 함수.  
+
+return 해줘,  
+그때의 너로.  
+```
 
 ## 달성 기준
 
-- 하루를 마치며 기억에 남는 실수나 문제를 생각해 보세요. 미션이나 개발과 직접적인 관련이 없는 것일 수록 좋습니다!
-- 위 예시를 보고 어떻게 프롬프트를 입력하면 더 재미있는 출력을 생성할 수 있을지 고민해보세요.
-- 가장 마음에 드는 결과를 Slack에 공유해보세요!
+- slack 에 공유 후 7~10의 이모지 받기
+- 댓글 2개 받기
+- 피어 세션때 개그 보여주고 따봉 이모티콘 받기
+- 위에 달성 못하면 다시 작성해서 올리기
+- 일주일에 3번 이상 작성하기
+
+## - 추가 / 팁
+- 그날의 학습 내용과 그날의 감정을 프롬프트에 녹여보세요!
+- 피어세션 때 아이스 브레이킹 용도로 사용해보세요!
 
 ---
 
